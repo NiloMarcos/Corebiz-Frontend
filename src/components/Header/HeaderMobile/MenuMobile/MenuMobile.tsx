@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Hamburguer from '../../../../assets/menu-icon.svg';
+import Hamburguer from "../../../../assets/menu-icon.svg";
 
 import logo from "../../../../assets/logo.svg";
 
@@ -34,6 +34,7 @@ export function MenuMobile(props: HamburgerMenuProps) {
         aria-expanded={isOpen ? "true" : "false"}
         aria-label={isOpen ? "Close menu" : "Open menu"}
         onClick={toggleMenu}
+        type="button"
       >
         <img src={Hamburguer} alt="Ícone Hamburguer Menu Mobile" />
       </button>
@@ -47,12 +48,13 @@ export function MenuMobile(props: HamburgerMenuProps) {
               className={styles.closeButton}
               onClick={closeMenu}
               aria-label="Close"
+              type="button"
             >
               <span>X</span>
             </button>
           </div>
           {props.menuItems.map((item, index) => (
-            <div>
+            <div key={item.label}>
               <a
                 key={index}
                 href={item.link}

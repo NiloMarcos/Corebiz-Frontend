@@ -37,18 +37,18 @@ export function Products() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Mais Vendidos</h2>
-      <p className={styles.line}></p>
+      <p className={styles.line}>{""}</p>
       <Swiper
         slidesPerView={"auto"}
-        // autoplay={{
-        //   delay: 7500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 7500,
+          disableOnInteraction: false,
+        }}
         navigation={{
           enabled: !isMobile,
         }}
         pagination={isMobile ? { clickable: true } : false}
-        modules={[Navigation, Pagination]}
+        modules={[Autoplay, Navigation, Pagination]}
         loop
         breakpoints={{
           320: {

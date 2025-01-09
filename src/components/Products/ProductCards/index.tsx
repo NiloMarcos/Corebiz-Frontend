@@ -29,13 +29,13 @@ export function ProductCard({ product }: { product: IProductCards }) {
 
   function handleAddProductInMinicart() {
     const minicart = localStorage.getItem("minicart");
-  
+
     const productsInMinicart = minicart ? JSON.parse(minicart) : [];
-  
+
     const updatedMinicart = [...productsInMinicart, product];
-  
+
     localStorage.setItem("minicart", JSON.stringify(updatedMinicart));
-  
+
     incrementCart();
   }
 
@@ -43,7 +43,7 @@ export function ProductCard({ product }: { product: IProductCards }) {
     <div className={styles.container}>
       {product.listPrice && (
         <>
-          <div className={styles.flagOff}></div>
+          <div className={styles.flagOff}>{""}</div>
           <span className={styles.text}>OFF</span>
         </>
       )}
@@ -70,7 +70,7 @@ export function ProductCard({ product }: { product: IProductCards }) {
             })}
           </p>
         ) : (
-          <div className={styles.separatePrice}></div>
+          <div className={styles.separatePrice}>{""}</div>
         )}
 
         <p className={styles.price}>
@@ -92,11 +92,15 @@ export function ProductCard({ product }: { product: IProductCards }) {
             </p>
           </div>
         ) : (
-          <div className={styles.separateInstallments}></div>
+          <div className={styles.separateInstallments}>{""}</div>
         )}
 
         <div className={styles.containerButton}>
-          <button className={styles.button} onClick={handleAddProductInMinicart}>
+          <button
+            className={styles.button}
+            onClick={handleAddProductInMinicart}
+            type="button"
+          >
             Comprar
           </button>
         </div>

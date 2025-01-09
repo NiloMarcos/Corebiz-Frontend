@@ -35,7 +35,10 @@ export function Minicart({ handleCloseMinicart }: MinicartProps) {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
         handleCloseMinicart();
       }
     }
@@ -50,7 +53,9 @@ export function Minicart({ handleCloseMinicart }: MinicartProps) {
     <div className={styles.minicartOverlay}>
       <div className={styles.minicart} ref={modalRef}>
         <div className={styles.minicartHeader}>
-          <button onClick={handleCloseMinicart}>X</button>
+          <button onClick={handleCloseMinicart} type="button">
+            X
+          </button>
           <p>
             Minicart
             <span>
@@ -81,13 +86,12 @@ export function Minicart({ handleCloseMinicart }: MinicartProps) {
                     </p>
                     <p className={styles.installments}>
                       {item.installments?.length > 0
-                        ? `${item.installments[0].quantity}x de ${(item.installments[0].value / 100).toLocaleString(
-                            "pt-br",
-                            {
-                              style: "currency",
-                              currency: "BRL",
-                            }
-                          )}`
+                        ? `${item.installments[0].quantity}x de ${(
+                            item.installments[0].value / 100
+                          ).toLocaleString("pt-br", {
+                            style: "currency",
+                            currency: "BRL",
+                          })}`
                         : ""}
                     </p>
                   </div>
@@ -100,8 +104,12 @@ export function Minicart({ handleCloseMinicart }: MinicartProps) {
         </div>
 
         <div className={styles.minicartFooter}>
-          <button className={styles.buyMore}>Continuar comprando</button>
-          <button className={styles.goToPayment}>Ir para o checkout</button>
+          <button className={styles.buyMore} type="button">
+            Continuar comprando
+          </button>
+          <button className={styles.goToPayment} type="button">
+            Ir para o checkout
+          </button>
         </div>
       </div>
     </div>

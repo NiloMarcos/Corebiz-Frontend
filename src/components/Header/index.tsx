@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
-import { isMobile } from "react-device-detect";
+
 import { HeaderDesktop } from "./HeaderDesktop";
+
 import { HeaderMobile } from "./HeaderMobile";
-import styles from './Header.module.css';
+
+import { isMobile } from "react-device-detect";
+
+import styles from "./Header.module.css";
 
 export function Header() {
   const [minicartIsVisible, setMinicartIsVisible] = useState(false);
@@ -28,7 +32,9 @@ export function Header() {
   }, []);
 
   return (
-    <div className={`${styles.containerHeader} ${isSticky ? styles.sticky : ''}`}>
+    <div
+      className={`${styles.containerHeader} ${isSticky ? styles.sticky : ""}`}
+    >
       {isMobile ? (
         <HeaderMobile
           handleOpenOrCloseMinicart={handleOpenOrCloseMinicart}

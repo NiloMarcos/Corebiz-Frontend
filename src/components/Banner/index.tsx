@@ -18,7 +18,7 @@ export function Banner() {
     <div className={styles.container}>
       <Swiper
         autoplay={{
-          delay: 8000,
+          delay: 7500,
           disableOnInteraction: false,
         }}
         pagination={{
