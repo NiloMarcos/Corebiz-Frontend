@@ -20,8 +20,12 @@ export function PromotionsBanners(props: ITypePromotionsBanners) {
         />
       </div>
       <div className={styles.promotionsBannersText}>
-        <h1 className={styles.promotionsBannersTitle}>{props.title}</h1>
-        <p className={styles.promotionsBannersSubTitle}>{props.subTitle}</p>
+        <h1 className={styles.promotionsBannersTitle}>
+          {props.title}
+        </h1>
+        <p className={styles.promotionsBannersSubTitle}>
+          {props.subTitle}
+        </p>
       </div>
     </div>
   );

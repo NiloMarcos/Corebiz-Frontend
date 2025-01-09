@@ -1,4 +1,3 @@
-
 export function RenderStars(stars: number) {
   const fullStars = Math.floor(stars);
   const halfStar = stars % 1 >= 0.5;

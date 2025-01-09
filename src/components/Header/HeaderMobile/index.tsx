@@ -1,27 +1,30 @@
-import Logo from '../../../assets/logo.svg';
+import Logo from "../../../assets/logo.svg";
 
-import Search from '../../../assets/search-icon.svg';
+import Search from "../../../assets/search-icon.svg";
 
-import Cart from '../../../assets/cart-icon.svg';
+import Cart from "../../../assets/cart-icon.svg";
 
 import { useCart } from "../../../context/CartContext";
 
-import { Minicart } from '../../Minicart';
+import { Minicart } from "../../Minicart";
 
-import styles from './Header.module.css'
+import styles from "./Header.module.css";
 
-import { menuItemsMobile } from '../../../mocks/menuItemsMobile';
+import { menuItemsMobile } from "../../../mocks/menuItemsMobile";
 
-import { MenuMobile } from './MenuMobile/MenuMobile';
+import { MenuMobile } from "./MenuMobile/MenuMobile";
 
 interface IVisibileMinicart {
   handleOpenOrCloseMinicart: () => void;
-  minicartIsVisible: boolean
+  minicartIsVisible: boolean;
 }
 
-export function HeaderMobile({ minicartIsVisible, handleOpenOrCloseMinicart }: IVisibileMinicart) {
+export function HeaderMobile({
+  minicartIsVisible,
+  handleOpenOrCloseMinicart,
+}: IVisibileMinicart) {
   const { cartCount } = useCart();
-  
+
   return (
     <header className={styles.containerMobile}>
       <div className={styles.contentMobile}>
@@ -32,7 +35,11 @@ export function HeaderMobile({ minicartIsVisible, handleOpenOrCloseMinicart }: I
         </a>
 
         <div className={styles.links}>
-          <button onClick={handleOpenOrCloseMinicart} className={styles.minicart}>
+          <button
+            onClick={handleOpenOrCloseMinicart}
+            className={styles.minicart}
+            type="button"
+          >
             <img src={Cart} alt="Ícone Meu Carrinho" />
             {cartCount > 0 && (
               <span className={styles.cartCounter}>{cartCount}</span>
@@ -40,16 +47,17 @@ export function HeaderMobile({ minicartIsVisible, handleOpenOrCloseMinicart }: I
           </button>
         </div>
 
-        {minicartIsVisible ? <Minicart handleCloseMinicart={handleOpenOrCloseMinicart} /> : <></>}
+        {minicartIsVisible ? (
+          <Minicart handleCloseMinicart={handleOpenOrCloseMinicart} />
+        ) : (
+          <></>
+        )}
       </div>
 
       <div className={styles.containerFormMinicartMobile}>
         <div className={styles.searchContainerMobile}>
           <form className={styles.formMobile}>
-            <input
-              type="text"
-              placeholder="O que está procurando?"
-            />
+            <input type="text" placeholder="O que está procurando?" />
             <button type="submit">
               <img src={Search} alt="Ícone botão de pesquisa" />
             </button>

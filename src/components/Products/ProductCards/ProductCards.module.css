@@ -13,6 +13,7 @@
 
 .productImage {
   @media (max-width: 1024px) {
+    object-fit: contain;
     max-width: 132px;
   }
 }
