@@ -1,0 +1,99 @@
+.containerMobile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 15px 20px 0;
+}
+
+.contentMobile
+.hamburguer {
+  background: transparent;
+  border: 0;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+
+  max-width: 115px;
+  max-height: 30px;
+
+  background: transparent;
+  border: 0;
+}
+
+.contentMobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.containerFormMinicartMobile {
+  width: 100%;
+}
+
+.searchContainerMobile {
+  width: 100%;
+}
+
+.formMobile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  border-bottom: 1px solid var(--gray-400);
+}
+
+.formMobile input {
+  width: 100%;
+
+  font-size: 13px;
+  font-weight: 400;
+  font-family: var(--font-primary);
+  color: var(--gray-400);
+
+  padding: 10px 0;
+  border: 0;
+  outline: none;
+}
+
+.formMobile button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.links {
+
+}
+
+.minicart {
+  display: flex;
+  text-decoration: none;
+}
+
+.cartCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--red-500);
+
+  font-size: 10px;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  color: var(--white);
+}
+
+.minicart img {
+  margin-right: 5px;
+}
+
+
