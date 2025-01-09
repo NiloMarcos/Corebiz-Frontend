@@ -72,6 +72,13 @@
 
 .minicart {
   display: flex;
+  align-items: center;
+
+  background: none;
+  border: 0;
+
+  cursor: pointer;
+
   text-decoration: none;
 }
 
