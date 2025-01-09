@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+
+.container :global(.swiper-pagination-horizontal) {
+  top: 22rem;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 20px;
+  font-family: var(--font-primary);
+  
+  margin: 25px 0 6px 0;
+  color: var(--black);
+}
+
+.line {
+  width: 65px;
+  height: 0;
+  border: 2px solid var(--gray-300);
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: 0 auto 40px auto;
+  }
+
+  .line {
+    margin-left: 20px;
+  }
+}

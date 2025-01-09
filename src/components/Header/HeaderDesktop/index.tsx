@@ -1,20 +1,30 @@
+import { useCart } from "../../../context/CartContext";
+
+import { Minicart } from '../../Minicart';
 
 import Logo from '../../../assets/logo.svg';
+
 import Search from '../../../assets/search-icon.svg';
+
 import User from '../../../assets/user-icon.svg';
+
 import Cart from '../../../assets/cart-icon.svg';
 
 import styles from './Header.module.css';
 
-export function HeaderDesktop() {
-  
-  const cartCount = 1;
-  
+interface IVisibileMinicart {
+  handleOpenOrCloseMinicart: () => void;
+  minicartIsVisible: boolean
+}
+
+export function HeaderDesktop({ minicartIsVisible, handleOpenOrCloseMinicart }: IVisibileMinicart) {
+  const { cartCount } = useCart();
+
   return (
     <header className={styles?.container}>
-      <div>
+      <a href="/">
         <img src={Logo} alt="Logo - Corebiz" />
-      </div>
+      </a>
 
       <div className={styles.containerFormMinicart}>
         <div className={styles.searchContainer}>
@@ -34,13 +44,16 @@ export function HeaderDesktop() {
             <img src={User} alt="Ícone Minha Conta" />
             Minha Conta
           </a>
-          <a href="#hash" className={styles.minicart}>
+          <button onClick={handleOpenOrCloseMinicart} className={styles.minicart}>
             <img src={Cart} alt="Ícone Meu Carrinho" />
             {cartCount > 0 && (
               <span className={styles.cartCounter}>{cartCount}</span>
             )}
-          </a>
+          </button>
         </div>
+
+        {minicartIsVisible ? <Minicart handleCloseMinicart={handleOpenOrCloseMinicart} /> : <></>}
+        
       </div>
     </header>
   );

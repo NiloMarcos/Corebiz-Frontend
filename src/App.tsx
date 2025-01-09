@@ -1,7 +1,13 @@
 import { Home } from './pages/Home';
 
+import { CartProvider } from "./context/CartContext";
+
 import './global.css';
 
 export function App() {
-  return <Home /> 
+  return (
+    <CartProvider>
+      <Home /> 
+    </CartProvider>
+  );
 }

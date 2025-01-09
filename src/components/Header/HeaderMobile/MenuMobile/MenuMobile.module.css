@@ -1,0 +1,86 @@
+.hamburgerIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  max-width: 115px;
+  max-height: 30px;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left  : 0;
+  bottom: 0;
+  background-color: var(--white);
+  padding: 10px;
+  z-index: 99;
+  width: 85%;
+  height: 100%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.containerMenu {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px 0;
+}
+
+.closeButton {
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  cursor: pointer;
+}
+
+.menuItemHighlight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  color: var(--black);
+
+  text-decoration: none;
+  padding: 0 0 20px 0;
+}
+
+.menuItemHighlight img {
+  width: 15px;
+  height: 15px;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-decoration: none;
+  
+  font-size: 18px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  color: var(--black);
+
+  padding: 5px 0;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid var(--black-500);
+}
+
+.menuItem img {
+  width: 15px;
+  height: 15px;
+}
