@@ -140,10 +140,34 @@
   background: transparent;
 }
 
+.removeItem {
+  border: 0;
+  background: transparent;
+}
+
+.removeItem img {
+  width: 30px;
+  height: 30px;
+}
+
 .goToPayment {
   border: 0;
   background: var(--black);
   color: var(--white);
+}
+
+.emptyCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.emptyCart {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-primary);
 }
 
 @media(max-width: 1024px) {

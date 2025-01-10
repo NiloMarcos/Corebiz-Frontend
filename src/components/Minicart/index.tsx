@@ -1,6 +1,10 @@
 import { useEffect, useState, useRef } from "react";
-import styles from "./Minicart.module.css";
+
 import { useCart } from "../../context/CartContext";
+
+import Trash from '../../assets/trash-solid.svg';
+
+import styles from "./Minicart.module.css";
 
 interface Installment {
   quantity: number;
@@ -49,7 +53,13 @@ export function Minicart({ handleCloseMinicart }: MinicartProps) {
     };
   }, [handleCloseMinicart]);
 
-  return (
+  const handleRemoveItem = (productId: number) => {
+    const updatedCart = cartItems.filter((item) => item.productId !== productId);
+    setCartItems(updatedCart);
+    localStorage.setItem("minicart", JSON.stringify(updatedCart));
+  };
+
+return (
     <div className={styles.minicartOverlay}>
       <div className={styles.minicart} ref={modalRef}>
         <div className={styles.minicartHeader}>
@@ -59,8 +69,8 @@ export function Minicart({ handleCloseMinicart }: MinicartProps) {
           <p>
             Minicart
             <span>
-              {cartCount > 0 && (
-                <span className={styles.cartCounter}>{cartCount}</span>
+              {cartItems.length > 0 && (
+                <span className={styles.cartCounter}>{cartItems.length}</span>
               )}
             </span>
           </p>
@@ -95,11 +105,20 @@ export function Minicart({ handleCloseMinicart }: MinicartProps) {
                         : ""}
                     </p>
                   </div>
+                  <button
+                    className={styles.removeItem}
+                    onClick={() => handleRemoveItem(item.productId)}
+                    type="button"
+                  >
+                   <img src={Trash} alt="" />
+                  </button>
                 </li>
               ))}
             </ul>
           ) : (
-            <p className={styles.emptyCart}>O carrinho está vazio.</p>
+            <div className={styles.emptyCart}>
+              <p>O carrinho está vazio.</p>
+            </div>
           )}
         </div>
 

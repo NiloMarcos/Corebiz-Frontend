@@ -31,9 +31,19 @@
   color: var(--white);
 }
 
+@media(max-width: 1024px) {
+  .promotionsBannersTitle {
+    font-size: 20px;
+  }
+
+  .promotionsBannersSubTitle {
+    font-size: 30px;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .promotionsBannersText {
-    top: 10%;
+    top: 20%;
     left: 10%;
   }
 }
